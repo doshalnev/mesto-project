@@ -1,0 +1,22 @@
+.element__title {
+  width: 246px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width:900px) {
+  .element__title {
+    width: 246px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}

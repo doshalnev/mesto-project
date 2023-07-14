@@ -1,0 +1,25 @@
+.modal {
+  margin: auto;
+  padding: 0;
+  position: fixed;
+  top: 25px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 5ms ease-in;
+  pointer-events: none;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width:350px) {
+  .modal {
+    top: -50px;
+  }
+}

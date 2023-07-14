@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  margin: 45px auto 31px;
+  color: #545454;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media screen and (max-width:900px) {
+  .footer {
+    width: 90%;
+    margin: 35px auto 31px;
+  }
+}
