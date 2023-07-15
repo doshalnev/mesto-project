@@ -1,5 +1,5 @@
 .form__save {
-  width: 358px;
+  max-width: 358px;
   min-height: 50px;
   display: inline-block;
   color: #fff;
@@ -13,13 +13,13 @@
 
 .form__save:hover {
   border-radius: 2px;
-  opacity: 0.800000011920929;
+  opacity: 0.8;
   background: #000;
 }
 
 @media screen and (max-width: 350px) {
   .form__save {
-    width: 238px;
+    max-width: 238px;
     font-size: 14px;
     margin: 43px 0 0;
   }

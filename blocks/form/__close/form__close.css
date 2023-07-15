@@ -1,7 +1,15 @@
 .form__close {
+  min-width: 32px;
+  min-height: 32px;
   position: absolute;
   top: -40px;
   right: -40px;
+  background-image: url(../../../images/Close-Icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #000;
+  transition: 2ms;
+  z-index: 2;
 }
 
 .form__close:hover {

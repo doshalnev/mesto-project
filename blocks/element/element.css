@@ -1,5 +1,5 @@
 .element {
-  width: 282px;
+  max-width: 282px;
   min-height: 361px;
   margin: 0 17px 20px 0;
   overflow: hidden;
@@ -14,7 +14,6 @@
 
 @media screen and (max-width:900px) {
   .element {
-    width: 282px;
     min-height: 361px;
     margin: 0 auto 19px;
   }
@@ -26,6 +25,10 @@
 
 @media screen and (max-width:350px) {
   .element {
-    margin: 0 0 19px;
+    margin: 0 0 20px;
+  }
+
+  .element:nth-child(3n) {
+    margin: 0 0 20px;
   }
 }

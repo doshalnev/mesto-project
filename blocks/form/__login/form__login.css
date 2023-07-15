@@ -1,5 +1,5 @@
 .form__login {
-  width: 358px;
+  max-width: 358px;
   min-height: 27px;
   margin: 0 0 30px 20px;
   padding: 0;
@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 350px) {
   .form__login {
-    width: 238px;
+    max-width: 238px;
     margin: 0 0 30px 4px;
   }
 }

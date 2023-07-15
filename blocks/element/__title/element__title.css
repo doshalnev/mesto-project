@@ -1,5 +1,5 @@
 .element__title {
-  width: 246px;
+  max-width: 246px;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,6 @@
 
 @media screen and (max-width:900px) {
   .element__title {
-    width: 246px;
     margin: 20px auto;
     display: flex;
     justify-content: space-between;

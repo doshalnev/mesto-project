@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 900px) {
   .profile__title {
-    margin: 0 0 7px 24px;
+    margin: 0 3px 10px 28px;
     font-size: 27px;
     text-align: center;
   }

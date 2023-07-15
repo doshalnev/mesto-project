@@ -1,6 +1,12 @@
 .profile__button {
-  width: 24px;
+  width: 10%;
+  min-height: 24px;
   margin-left: 10px;
+  padding: 0;
+  background-image: url(../../../images/Edit-Button.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #000;
 }
 
 .profile__button:hover {
@@ -10,6 +16,9 @@
 
 @media screen and (max-width: 350px) {
   .profile__button {
-    margin-left: 6px;
+    width: 7%;
+    min-height: 18px;
+    margin: 0;
+    background-size: 18px 18px;
   }
 }
