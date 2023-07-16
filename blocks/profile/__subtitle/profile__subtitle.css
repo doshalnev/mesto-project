@@ -5,11 +5,15 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 70%;
 }
 
 @media screen and (max-width: 900px) {
   .profile__subtitle {
-    margin: 0 0 33px;
+    margin: 0 0 33px 42px;
     text-align: center;
     font-size: 14px;
   }

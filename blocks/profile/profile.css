@@ -4,7 +4,7 @@
   margin: 0 auto 50px;
   display: flex;
   flex-direction: row;
-
+  justify-content: center;
 }
 
 @media screen and (max-width: 900px) {

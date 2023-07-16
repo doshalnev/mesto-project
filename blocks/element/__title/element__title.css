@@ -1,8 +1,7 @@
 .element__title {
-  max-width: 246px;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
+  width: 78%;
+  max-width: 200px;
+  margin: 0;
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
@@ -10,12 +9,4 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-@media screen and (max-width:900px) {
-  .element__title {
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-  }
 }

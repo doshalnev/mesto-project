@@ -1,0 +1,11 @@
+.element__content {
+  margin: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen (max-width: 400px) {
+  .element__content {
+    margin: 10px 10px 0 10px
+  }
+}
