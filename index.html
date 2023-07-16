@@ -9,19 +9,20 @@
 </head>
 
 <body class="page">
-
-  <div id="openModal" class="modal">
-    <form class="form" id="form">
-      <button type="button" name="close" class="form__close"></button>
-      <h2 class=" form__title">Редактировать профиль</h2>
-      <fieldset class="form__login">
-        <input type="text" name="login" value="Жак-Ив Кусто">
-      </fieldset>
-      <fieldset class="form__about">
-        <input type="text" name="about" value="Исследователь океана">
-      </fieldset>
-      <button class="form__save" type="submit">Сохранить</button>
-    </form>
+  <div id="open-popup" class="popup">
+    <div class="popup__container">
+      <form class="form" name="form" id="form">
+        <button type="button" name="close" class="form__close"></button>
+        <h2 class=" form__title">Редактировать профиль</h2>
+        <fieldset class="form__login">
+          <input type="text" name="login" value="Жак-Ив Кусто">
+        </fieldset>
+        <fieldset class="form__about">
+          <input type="text" name="about" value="Исследователь океана">
+        </fieldset>
+        <button class="form__save" type="submit">Сохранить</button>
+      </form>
+    </div>
   </div>
 
   <header class="header">

@@ -1,4 +1,4 @@
-.modal__active {
+.popup_active {
   display: flex;
   z-index: 5;
 }

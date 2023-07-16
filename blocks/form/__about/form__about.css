@@ -1,7 +1,7 @@
 .form__about {
-  width: 100%;
+  max-width: 358px;
   min-height: 27px;
-  margin: 0 0 0 20px;
+  margin: 0;
   padding: 0;
   text-align: left;
   font-size: 14px;

@@ -1,21 +1,9 @@
 .form {
-  display: block;
-  width: 29.3%;
-  min-height: 300px;
-  margin: auto;
-  position: relative;
-  text-align: center;
-  align-items: center;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  color: black;
-  z-index: 5;
+  padding: 0 20px 0 20px;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .form {
-    width: 79%;
-    min-height: 295px;
+    padding: 0 2px 0 2px;
   }
 }
