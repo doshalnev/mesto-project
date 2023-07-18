@@ -17,9 +17,10 @@
   background: #000;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
   .form__save {
     max-width: 238px;
+    min-height: 46px;
     font-size: 14px;
     margin: 43px 0 0;
   }

@@ -16,7 +16,7 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 660px) {
   .form__close {
     top: -35px;
     right: 0;

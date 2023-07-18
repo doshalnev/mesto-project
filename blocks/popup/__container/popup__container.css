@@ -1,6 +1,6 @@
 .popup__container {
   display: block;
-  width: 26.5%;
+  width: 31.3%;
   min-height: 300px;
   margin: auto;
   position: relative;
@@ -9,7 +9,7 @@
   padding: 15px;
   background-color: #fff;
   border-radius: 10px;
-  color: black;
+  color: #000;
   z-index: 5;
 }
 
