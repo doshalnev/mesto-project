@@ -1,5 +1,14 @@
 .element__like_active {
+  width: 22px;
+  height: 19px;
+  margin: 5px 0;
   background-image: url(../../../../images/black-like.svg);
+  background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 5px;
+  background-color: #fff;
+}
+
+.element__like_active:hover {
+  opacity: 0.5;
+  background-color: #fff;
 }

@@ -9,16 +9,32 @@
 </head>
 
 <body class="page">
-  <div id="open-popup" class="popup">
+  <div id="popup-edit" class="popup">
     <div class="popup__container">
       <form class="form" name="form" id="form">
-        <button type="button" name="close" class="form__close"></button>
+        <button type="button" id="form__close" name="close" class="form__close"></button>
         <h2 class=" form__title">Редактировать профиль</h2>
         <fieldset class="form__login">
           <input type="text" name="login" value="Жак-Ив Кусто">
         </fieldset>
         <fieldset class="form__about">
           <input type="text" name="about" value="Исследователь океана">
+        </fieldset>
+        <button class="form__save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="popup-place" class="popup">
+    <div class="popup__container">
+      <form class="form" name="form" id="form">
+        <button type="button" id="form__close" name="close" class="form__close"></button>
+        <h2 class=" form__title">Новое место</h2>
+        <fieldset class="form__name">
+          <input type="text" name="name" value="Название">
+        </fieldset>
+        <fieldset class="form__link">
+          <input type="text" name="link" value="Ссылка на картинку">
         </fieldset>
         <button class="form__save" type="submit">Сохранить</button>
       </form>
@@ -32,7 +48,7 @@
       <img class="profile__avatar" src="./images/Kusto.jpg" alt="Исследователь Кусто">
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто
-          <button class="profile__button" type="button">
+          <button class="profile__button" id="profile__button" type="button">
           </button>
         </h1>
         <p class="profile__subtitle">Исследователь океана</p>
@@ -83,9 +99,17 @@
           <button class="element__like" type="button"></button>
         </div>
       </div>
+      <template>
+        <div class="element">
+          <img class="element__photo">
+          <div class="element__content">
+            <h2 class="element__title"></h2>
+            <button class="element__like" type="button"></button>
+      </template>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
+  <script src="./script.js"></script>
 </body>

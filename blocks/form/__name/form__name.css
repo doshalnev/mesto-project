@@ -1,0 +1,20 @@
+.form__name {
+  width: 100%;
+  min-height: 27px;
+  margin: 0 0 30px;
+  padding: 0;
+  text-align: left;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-bottom: 1px solid rgb(161, 158, 158);
+  color: #c4c4c4;
+}
+
+@media screen and (max-width: 500px) {
+  .form__name {
+    width: 95.8%;
+    margin: 0 0 30px 4px;
+  }
+}
