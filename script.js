@@ -12,12 +12,11 @@ close.onclick = function () {
   popup.classList.remove("popup_active");
 }
 
-
 /* Edit name and info about self */
 
-var form = document.querySelector('.form');
-var nameInput = document.querySelector('input[name="login"');
-var aboutInput = document.querySelector('input[name="about"');
+var form = document.querySelector('form');
+var nameInput = document.querySelector('input[name="login"]');
+var aboutInput = document.querySelector('input[name="about"]');
 var profileTitle = document.querySelector('.profile__title');
 var profileSubtitle = document.querySelector('.profile__subtitle');
 
@@ -51,10 +50,76 @@ closePlace.onclick = function () {
 
 console.log(closePlace);
 
+/* create new element  */
+
+var formPlace = document.querySelector('#form-place');
+var namesInput = document.querySelector('input[name="names"]');
+var linkInput = document.querySelector('input[name="link"]');
+var elementTitle = document.querySelector('.element__title');
+var elementPhoto = document.querySelector('.element__photo');
+
+function handleFormSubmite(evt) {
+  evt.preventDefault();
+  console.log(namesInput.value);
+  console.log(linkInput.value);
+
+  elementTitle.textContent = namesInput.value;
+  elementPhoto = linkInput.value;
+
+  close.onclick();
+}
+
+formPlace.addEventListener('submit', handleFormSubmite);
+
 /* Six cards from box */
+
+const elTemplate = document.querySelector('#element-template').content;
+const elements = document.querySelector('.elements');
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg';
+element.querySelector('.element__title').textContent = 'Архыз';
+
+elements.appendChild(element);
+
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg';
+element.querySelector('.element__title').textContent = 'Челябинская область';
+
+elements.appendChild(element);
+
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg';
+element.querySelector('.element__title').textContent = 'Иваново';
+
+elements.appendChild(element);
+
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg';
+element.querySelector('.element__title').textContent = 'Камчатка';
+
+elements.appendChild(element);
+
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg';
+element.querySelector('.element__title').textContent = 'Холмогорский район';
+
+elements.appendChild(element);
+
+var element = elTemplate.querySelector('.element').cloneNode(true);
+
+element.querySelector('.element__photo').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg';
+element.querySelector('.element__title').textContent = 'Байкал';
+
+elements.appendChild(element);
 
 /* Like 'active' for like button */
 
-let elementLike = document.querySelector('.element__like').addEventListener('click', function (evt) {
+const elementLike = document.querySelector('.element__like').addEventListener('click', function (evt) {
   evt.target.classList.toggle('element__like_active');
 })
