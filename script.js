@@ -1,46 +1,54 @@
-/* setting modal window 'popup-edit' */
-
-let popupEdit = document.querySelector('#popup-edit');
-document.querySelector('#profile-button').onclick = function () {
-  popupEdit.classList.add('popup_active');
-}
-document.querySelector('#form-edit-close').onclick = function () {
-  popupEdit.classList.remove('popup_active');
-}
+/* open popup window function */
+const btnPopupEdit = document.querySelector('#profile-button');
+const btnPopupPlace = document.querySelector('.profile__add-button');
+const popupEdit = document.querySelector('#popup-edit');
+const popupPlace = document.querySelector('#popup-place');
 
 
-/* setting modal window 'popup-place' */
+function openPopup() {
+  btnPopupEdit.addEventListener('click', function () {
+    popupEdit.classList.add('popup_active');
+  })
 
-let popupPlace = document.querySelector('#popup-place');
-let buttonPlace = document.querySelector('.profile__add-button');
-let closePlace = document.querySelector('#form-place-close');
-
-buttonPlace.onclick = function () {
-  popupPlace.classList.add('popup_active');
+  btnPopupPlace.addEventListener('click', function () {
+    popupPlace.classList.add('popup_active');
+  })
 }
 
-closePlace.onclick = function () {
-  popupPlace.classList.remove('popup_active');
+openPopup();
+
+
+/* close popup window function */
+const btnsClosePopup = document.querySelectorAll('.form__close');
+
+function closePopup() {
+  btnsClosePopup.forEach(function (btnClosePopup) {
+    btnClosePopup.addEventListener('click', function () {
+      popupEdit.classList.remove('popup_active');
+      popupPlace.classList.remove('popup_active');
+    })
+  })
 }
+
+closePopup();
 
 
 /* function for edit information profile */
 
-let formEdit = document.querySelector('#form-edit');
-let loginInput = document.querySelector('input[name="login"]');
-let aboutInput = document.querySelector('input[name="about"]');
-let profileTitle = document.querySelector('.profile__title');
-let profileSubtitle = document.querySelector('.profile__subtitle');
-let buttonSave = document.querySelector('#form-save');
-let closeEdit = document.querySelector('#form-edit-close');
+const formEdit = document.querySelector('#form-edit');
+const loginInput = document.querySelector('input[name="login"]');
+const aboutInput = document.querySelector('input[name="about"]');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+const buttonSave = document.getElementById('form-edit-save');
+const closeEdit = document.getElementById('form-edit-close');
 
 function editInfoProfile(evt) {
   evt.preventDefault();
 
   profileTitle.textContent = loginInput.value;
   profileSubtitle.textContent = aboutInput.value;
-
-  closeEdit.onclick();
+  popupEdit.classList.remove('popup_active');
 }
 
 formEdit.addEventListener('submit', editInfoProfile);
@@ -48,23 +56,27 @@ formEdit.addEventListener('submit', editInfoProfile);
 
 /* add new card */
 
-let btnClosePlace = document.querySelector('#form-place-close');
-let elements = document.querySelector('.elements');
+const btnClosePlace = document.querySelector('#form-close');
+const formPlace = document.querySelector('#form-place');
+const elements = document.querySelector('.elements');
 let element = elements.querySelector('.element');
-let nameInput = document.querySelector('input[name="name"]');
-let linkInput = document.querySelector('input[name="link"]');
-let btnPlaceSave = document.querySelector('#form-place-save').onclick = function (evt) {
+const nameInput = document.querySelector('input[name="name"]');
+const linkInput = document.querySelector('input[name="link"]');
+const btnPlaceSave = document.getElementById('form-place-save')
+
+function addNewCard(evt) {
   evt.preventDefault();
 
   element = elements.querySelector('.element').cloneNode(true);
 
   element.querySelector('.element__photo').src = linkInput.value;
   element.querySelector('.element__title').textContent = nameInput.value;
+  popupPlace.classList.remove('popup_active');
 
   elements.prepend(element);
-
-  btnClosePlace.onclick();
 }
+
+formPlace.addEventListener('submit', addNewCard);
 
 
 const initialCards = [
@@ -99,7 +111,7 @@ const initialCards = [
 const template = document.querySelector('#element-template').content;
 
 for (let i = 0; i < initialCards.length; i += 1) {
-  element = template.querySelector('.element').cloneNode(true);
+  const element = template.querySelector('.element').cloneNode(true);
   const nameElement = initialCards[i].name;
   const linkElement = initialCards[i].link;
 
@@ -151,3 +163,23 @@ btnClsPhotoPopup.onclick = function () {
 
 btnsPhoto.onclick = function () {
 }
+
+
+
+
+
+/*  errors   
+
+После каждого добавления карточки нужно очищать поля формы, 
+сейчас пользователю приходится делать это руками если требуется 
+добавить более одной карточки.
+
+События карточки - лайки, удаление, открытие окна - не работают для 
+вновь добавленных карточек.
+
+Кнопка закрытия окна не по макету http://joxi.ru/D2P1wOgh1glxlA
+
+Если поменять данные пользователя, кнопка для открытия модального 
+окна уменьшается http://joxi.ru/vAWgB7WuKNaDZA
+
+*/
