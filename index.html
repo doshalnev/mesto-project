@@ -11,8 +11,8 @@
 <body class="page">
   <div id="popup-edit" class="popup">
     <div class="popup__container">
+      <button type="button" id="form-close" name="close" class="form__close"></button>
       <form class="form" name="form" id="form-edit">
-        <button type="button" id="form-edit-close" name="close" class="form__close"></button>
         <h2 class=" form__title">Редактировать профиль</h2>
         <fieldset class="form__login">
           <input type="text" name="login" value="Жак-Ив Кусто">
@@ -27,8 +27,8 @@
 
   <div id="popup-place" class="popup">
     <div class="popup__container">
+      <button type="button" id="form-close" name="close" class="form__close"></button>
       <form class="form" name="form" id="form-place">
-        <button type="button" id="form-close" name="close" class="form__close"></button>
         <h2 class=" form__title">Новое место</h2>
         <fieldset class="form__name">
           <input type="text" name="name" placeholder="Название">
@@ -42,10 +42,12 @@
   </div>
 
 
-  <div id="popupPhoto" class="popup-photo">
-    <button class="popup-photo__close" type="button"></button>
-    <img class="popup-photo__big" id="popupPhotoBig">
-    <div class="popup-photo__caption" id="caption"></div>
+  <div id="popup-photo" class="popup">
+    <div class="popup__box">
+      <button class="form__close" type="button"></button>
+      <img class="popup__photo-big" id="popupPhotoBig" alt="Изображение пейзажа">
+      <div class="popup__photo-caption" id="caption"></div>
+    </div>
   </div>
 
 
@@ -118,7 +120,7 @@
     <div class="elements">
       <div id="element" class="element">
         <button type="reset" class="element__trash"></button>
-        <img class="element__photo" id="elPhotoBtn">
+        <img class="element__photo" id="elPhotoBtn" alt="alt">
         <div class="element__content">
           <h2 class="element__title"></h2>
           <button class="element__like" id="like" type="button"></button>
@@ -127,8 +129,5 @@
     </div>
   </template>
   <script src="./script.js"></script>
+  <script src="./initialCards.js"></script>
 </body>
-
-<!--
-  https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg
--->

@@ -1,0 +1,20 @@
+.popup__box {
+  display: block;
+  width: 37%;
+  height: 540px;
+  margin: auto;
+  position: relative;
+  top: 0;
+  text-align: center;
+  align-items: center;
+  color: #000;
+  z-index: 5;
+}
+
+@media screen and (max-width: 730px) {
+  .popup__box {
+    width: 79%;
+    min-height: 295px;
+    max-width: 282px;
+  }
+}

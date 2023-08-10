@@ -9,7 +9,7 @@
   background-size: contain;
   background-color: rgba(0, 0, 0, 0);
   transition: 2ms;
-  z-index: 2;
+  z-index: 5;
 }
 
 .form__close:hover {
