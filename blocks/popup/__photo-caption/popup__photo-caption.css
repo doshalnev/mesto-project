@@ -1,10 +1,10 @@
 .popup__photo-caption {
-  margin: auto;
+  position: absolute;
+  bottom: -25px;
+  text-align: left;
   display: block;
-  text-align: center;
-  width: 10%;
+  width: 60%;
   color: #fff;
-  padding: 10px 0;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
