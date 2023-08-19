@@ -11,7 +11,8 @@ const btnPopupEdit = document.querySelector('#profile-button');
 const btnPopupPlace = document.querySelector('.profile__add-button');
 const popupEdit = document.querySelector('#popup-edit');
 const popupPlace = document.querySelector('#popup-place');
-const popupPhoto = document.querySelector('#popup-photo')
+const popupPhoto = document.querySelector('#popup-photo');
+const popupPhotoCaption = document.querySelector('#caption');
 const btnClsPopupEdit = document.querySelector('#close-popupEdit');
 const btnClsPopupPlace = document.querySelector('#close-popupPlace');
 const btnClsPopupPhoto = document.querySelector('#close-popupPhoto');
@@ -27,6 +28,7 @@ const btnPlaceSave = document.getElementById('form-place-save');
 const bigPhoto = document.querySelector('.popup__photo-big');
 
 
+
 /*function openPopup */
 
 function openPopup(item) {
@@ -35,6 +37,8 @@ function openPopup(item) {
 
 btnPopupPlace.addEventListener('click', function () {
   openPopup(popupPlace);
+  nameInput.value = "";
+  linkInput.value = "";
 })
 
 
@@ -111,19 +115,19 @@ const placeInfo = initialCards.map(function (item) {
 });
 
 function render() {
-  placeInfo.forEach(createCard);
-}
+  placeInfo.forEach(function (placeInfo) {
+    const card = createCard(placeInfo);
+    renderCard(card);
+  })
+};
 
 function createCard({ name, link, alt }) {
-  const card = template
-    .querySelector(".element")
-    .cloneNode(true);
+  const card = template.querySelector(".element").cloneNode(true);
 
   const elementLike = card.querySelector('.element__like');
   const btnTrash = card.querySelector('.element__trash');
   const btnPopupPhoto = card.querySelector('.element__photo');
 
-  document.querySelector('#caption').textContent = name;
   card.querySelector('.element__title').textContent = name;
   card.querySelector('.element__photo').src = link;
   card.querySelector('.element__photo').setAttribute('alt', alt);
@@ -141,60 +145,51 @@ function createCard({ name, link, alt }) {
     openPopup(popupPhoto);
     popupPhoto.classList.add('popup_photo-opacity');
     bigPhoto.src = this.src;
-  })
+    bigPhoto.alt = this.alt;
 
-  btnClsPopupPhoto.addEventListener('click', function () {
-    closePopup(popupPhoto);
+    popupPhotoCaption.textContent = name;
   })
-
-  elements.prepend(card);
 
   return card;
 }
 
+function renderCard(card) {
+  const elements = document.querySelector('.elements');
+  elements.prepend(card);
+}
+
 render();
+
 
 /* add new card */
 
 function addNewCard(evt) {
   evt.preventDefault();
 
-  element = elements.querySelector('.element').cloneNode(true);
-
-  const elementLike = element.querySelector('.element__like');
-  const btnTrash = element.querySelector('.element__trash');
-  const btnPopupPhoto = element.querySelector('.element__photo');
+  createCard({ linkInput, nameInput, nameInput });
 
   element.querySelector('.element__photo').src = linkInput.value;
   element.querySelector('.element__title').textContent = nameInput.value;
   element.querySelector('.element__photo').setAttribute('alt', nameInput.value);
 
 
-  elementLike.addEventListener('click', function () {
-    elementLike.classList.toggle('element__like_active');
-  })
-
-  btnTrash.addEventListener('click', function () {
-    btnTrash.parentNode.remove();
-  })
-
-  btnPopupPhoto.addEventListener('click', function () {
-    openPopup(popupPhoto);
-    popupPhoto.classList.add('popup_photo-opacity');
-    bigPhoto.src = this.src;
-  })
-
   btnClsPopupPhoto.addEventListener('click', function () {
     closePopup(popupPhoto);
   })
 
-  elements.prepend(element);
   closePopup(popupPlace);
+
+  return;
 }
+
+
+formPlace.addEventListener('submit', addNewCard);
+
 
 btnClsPopupPlace.addEventListener('click', function () {
   closePopup(popupPlace);
 })
 
-formPlace.addEventListener('submit', addNewCard);
-
+btnClsPopupPhoto.addEventListener('click', function () {
+  closePopup(popupPhoto);
+}) 
