@@ -1,5 +1,3 @@
-
-
 /* cards */
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
@@ -166,11 +164,12 @@ render();
 function addNewCard(evt) {
   evt.preventDefault();
 
-  createCard({ linkInput, nameInput, nameInput });
+  const link = linkInput.value;
+  const name = nameInput.value;
 
-  element.querySelector('.element__photo').src = linkInput.value;
-  element.querySelector('.element__title').textContent = nameInput.value;
-  element.querySelector('.element__photo').setAttribute('alt', nameInput.value);
+  const card = createCard({ link, name, alt: name });
+
+  elements.prepend(card);
 
 
   btnClsPopupPhoto.addEventListener('click', function () {
