@@ -152,7 +152,6 @@ function createCard({ name, link, alt }) {
 }
 
 function renderCard(card) {
-  const elements = document.querySelector('.elements');
   elements.prepend(card);
 }
 
@@ -171,19 +170,12 @@ function addNewCard(evt) {
 
   elements.prepend(card);
 
-
-  btnClsPopupPhoto.addEventListener('click', function () {
-    closePopup(popupPhoto);
-  })
-
   closePopup(popupPlace);
 
   return;
 }
 
-
 formPlace.addEventListener('submit', addNewCard);
-
 
 btnClsPopupPlace.addEventListener('click', function () {
   closePopup(popupPlace);

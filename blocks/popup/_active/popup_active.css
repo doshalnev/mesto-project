@@ -1,5 +1,4 @@
 .popup_active {
   visibility: visible;
-  transition: all 0.3s ease-in-out 0.4s;
   opacity: 1;
 }
