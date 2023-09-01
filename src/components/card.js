@@ -1,74 +1,8 @@
-/* cards */
-const profileTitle = document.querySelector('.profile__title');
-const profileSubtitle = document.querySelector('.profile__subtitle');
 const template = document.querySelector('#element-template').content;
 const elements = document.querySelector('.elements')
 let element = elements.querySelector('.element');
-/* buttons */
-const btnPopupEdit = document.querySelector('#profile-button');
-const btnPopupPlace = document.querySelector('.profile__add-button');
-const popupEdit = document.querySelector('#popup-edit');
-const popupPlace = document.querySelector('#popup-place');
 const popupPhoto = document.querySelector('#popup-photo');
 const popupPhotoCaption = document.querySelector('#caption');
-const btnClsPopupEdit = document.querySelector('#close-popupEdit');
-const btnClsPopupPlace = document.querySelector('#close-popupPlace');
-const btnClsPopupPhoto = document.querySelector('#close-popupPhoto');
-/* forms */
-const formEdit = document.querySelector('#form-edit');
-const formPlace = document.querySelector('#form-place');
-const loginInput = document.querySelector('input[name="login"]');
-const aboutInput = document.querySelector('input[name="about"]');
-const nameInput = document.querySelector('input[name="name"]');
-const linkInput = document.querySelector('input[name="link"]');
-const buttonSave = document.getElementById('form-edit-save');
-const btnPlaceSave = document.getElementById('form-place-save');
-const bigPhoto = document.querySelector('.popup__photo-big');
-
-
-
-/*function openPopup */
-
-function openPopup(item) {
-  item.classList.add('popup_active');
-}
-
-btnPopupPlace.addEventListener('click', function () {
-  openPopup(popupPlace);
-  nameInput.value = "";
-  linkInput.value = "";
-})
-
-
-/* function closePopup */
-
-function closePopup(item) {
-  item.classList.remove('popup_active');
-}
-
-
-/* function for edit information profile */
-
-function editInfoProfile(evt) {
-  evt.preventDefault();
-
-  profileTitle.textContent = loginInput.value;
-  profileSubtitle.textContent = aboutInput.value;
-
-  closePopup(popupEdit);
-}
-
-btnPopupEdit.addEventListener('click', function () {
-  openPopup(popupEdit);
-})
-
-btnClsPopupEdit.addEventListener('click', function () {
-  closePopup(popupEdit);
-})
-
-formEdit.addEventListener('submit', editInfoProfile);
-
-
 /* add six cards */
 
 const initialCards = [
@@ -158,29 +92,3 @@ function renderCard(card) {
 render();
 
 
-/* add new card */
-
-function addNewCard(evt) {
-  evt.preventDefault();
-
-  const link = linkInput.value;
-  const name = nameInput.value;
-
-  const card = createCard({ link, name, alt: name });
-
-  elements.prepend(card);
-
-  closePopup(popupPlace);
-
-  return;
-}
-
-formPlace.addEventListener('submit', addNewCard);
-
-btnClsPopupPlace.addEventListener('click', function () {
-  closePopup(popupPlace);
-})
-
-btnClsPopupPhoto.addEventListener('click', function () {
-  closePopup(popupPhoto);
-}) 

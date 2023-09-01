@@ -1,0 +1,7 @@
+.form__save_active {
+  border-radius: 2px;
+  border: 1px solid #000;
+  background: #fff;
+  opacity: 0.3;
+  color: black;
+}
